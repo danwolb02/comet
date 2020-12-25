@@ -11,7 +11,7 @@ VertexBuffer::VertexBuffer(const Vec<f32> &data)
     if (!handle) throw RuntimeError("Unable to create vertex buffer.");
 
     bind();
-    GL_CALL(glBufferData(42, data.size() * sizeof(f32), data.data(), GL_STATIC_DRAW));
+    GL_CALL(glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(f32), data.data(), GL_STATIC_DRAW));
 }
 
 VertexBuffer::VertexBuffer(VertexBuffer &&other)
