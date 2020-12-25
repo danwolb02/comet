@@ -1,7 +1,8 @@
 project('comet', 'cpp', version : '0.1.0')
 
 comet_source_files = files(
-    'source/comet/graphics/window.cpp'
+    'source/comet/graphics/window.cpp',
+    'source/comet/graphics/vertex_buffer.cpp',
 )
 
 comet_header_files = files(
@@ -9,10 +10,13 @@ comet_header_files = files(
     'include/comet/graphics/window.hpp',
     'include/comet/pch.hpp',
     'include/comet/types.hpp',
+    'include/comet/graphics/vertex_buffer.hpp',
 )
 
 comet_dependencies = [
-    dependency('glfw3')
+    dependency('glfw3'),
+    dependency('gl'),
+    dependency('glew'),
 ]
 
 comet_library = library(

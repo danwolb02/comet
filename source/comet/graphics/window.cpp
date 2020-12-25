@@ -20,6 +20,8 @@ Window::Window(const u32 width, const u32 height, const String &title)
 
     glfwMakeContextCurrent((GLFWwindow *)handle);
     glfwSwapInterval(1);
+
+    if (glewInit()) throw RuntimeError("Unable to initialize GLEW.");
 }
 
 Window::~Window()
