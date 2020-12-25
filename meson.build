@@ -6,6 +6,7 @@ comet_source_files = files(
     'source/comet/graphics/index_buffer.cpp',
     'source/comet/graphics/vertex_array.cpp',
     'source/comet/graphics/renderer.cpp',
+    'source/comet/graphics/shader.cpp',
 )
 
 comet_header_files = files(
@@ -17,6 +18,7 @@ comet_header_files = files(
     'include/comet/graphics/index_buffer.hpp',
     'include/comet/graphics/vertex_array.hpp',
     'include/comet/graphics/renderer.hpp',
+    'include/comet/graphics/shader.hpp',
 )
 
 comet_dependencies = [
