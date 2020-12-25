@@ -1,7 +1,7 @@
 #pragma once
 
-#include <comet/graphics/vertex_array.hpp>
-#include <comet/graphics/shader.hpp>
+#include <comet/graphics/primitives/shader.hpp>
+#include <comet/graphics/primitives/vertex_array.hpp>
 
 namespace comet
 {

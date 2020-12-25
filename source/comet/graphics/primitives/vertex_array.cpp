@@ -1,8 +1,8 @@
 #define COMET_IMPLEMENTATION
 
-#include <comet/external.hpp>
 #include <comet/base.hpp>
-#include <comet/graphics/vertex_array.hpp>
+#include <comet/external.hpp>
+#include <comet/graphics/primitives/vertex_array.hpp>
 
 namespace comet
 {

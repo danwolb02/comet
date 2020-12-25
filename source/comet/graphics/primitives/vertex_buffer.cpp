@@ -1,7 +1,7 @@
 #define COMET_IMPLEMENTATION
 
 #include <comet/external.hpp>
-#include <comet/graphics/vertex_buffer.hpp>
+#include <comet/graphics/primitives/vertex_buffer.hpp>
 
 namespace comet
 {

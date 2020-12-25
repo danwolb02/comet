@@ -2,11 +2,11 @@ project('comet', 'cpp', version : '0.1.0')
 
 comet_source_files = files(
     'source/comet/graphics/window.cpp',
-    'source/comet/graphics/vertex_buffer.cpp',
-    'source/comet/graphics/index_buffer.cpp',
-    'source/comet/graphics/vertex_array.cpp',
+    'source/comet/graphics/primitives/vertex_buffer.cpp',
+    'source/comet/graphics/primitives/index_buffer.cpp',
+    'source/comet/graphics/primitives/vertex_array.cpp',
     'source/comet/graphics/renderer.cpp',
-    'source/comet/graphics/shader.cpp',
+    'source/comet/graphics/primitives/shader.cpp',
 )
 
 comet_header_files = files(
@@ -14,11 +14,11 @@ comet_header_files = files(
     'include/comet/graphics/window.hpp',
     'include/comet/pch.hpp',
     'include/comet/types.hpp',
-    'include/comet/graphics/vertex_buffer.hpp',
-    'include/comet/graphics/index_buffer.hpp',
-    'include/comet/graphics/vertex_array.hpp',
+    'include/comet/graphics/primitives/vertex_buffer.hpp',
+    'include/comet/graphics/primitives/index_buffer.hpp',
+    'include/comet/graphics/primitives/vertex_array.hpp',
     'include/comet/graphics/renderer.hpp',
-    'include/comet/graphics/shader.hpp',
+    'include/comet/graphics/primitives/shader.hpp',
 )
 
 comet_dependencies = [

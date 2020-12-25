@@ -1,7 +1,7 @@
 #define COMET_IMPLEMENTATION
 
 #include <comet/external.hpp>
-#include <comet/graphics/index_buffer.hpp>
+#include <comet/graphics/primitives/index_buffer.hpp>
 
 namespace comet
 {

@@ -1,7 +1,7 @@
 #define COMET_IMPLEMENTATION
 
 #include <comet/external.hpp>
-#include <comet/graphics/shader.hpp>
+#include <comet/graphics/primitives/shader.hpp>
 
 namespace comet
 {
