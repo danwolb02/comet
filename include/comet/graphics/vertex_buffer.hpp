@@ -23,6 +23,8 @@ public:
 
     auto bind() const -> void;
 
+    friend auto operator<<(OutputStream &output_stream, const VertexBuffer &vertex_buffer) -> OutputStream &;
+
 private:
     u32 handle = 0;
 };

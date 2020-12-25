@@ -26,4 +26,26 @@ namespace comet
     using Rc = std::shared_ptr<Type>;
 
     using RuntimeError = std::runtime_error;
+
+    template <typename Type1, typename Type2>
+    using Map = std::map<Type1, Type2>;
+
+    using OutputStream = std::ostream;
+
+    template <typename Type1, typename Type2>
+    auto operator<<(OutputStream &output_stream, const Map<Type1, Type2> &map) -> OutputStream &
+    {
+        output_stream << "{ ";
+
+        for (auto it = map.begin(); it != map.end(); it++)
+        {
+            output_stream << "{ index: " << it->first
+                          << ", vertex_array: " << it->second
+                          << " } ";
+        }
+
+        output_stream << "}";
+        return output_stream;
+    }
+
 } // namespace comet
