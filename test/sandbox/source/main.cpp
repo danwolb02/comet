@@ -1,7 +1,15 @@
-#include <comet/hello.hpp>
+#include <comet/graphics/window.hpp>
+
+using namespace comet;
 
 int main()
 {
-    comet::hello();
+    Window window(1280, 720, "Comet Application");
+
+    while (!window.should_close())
+    {
+        window.update();
+    }
+
     return 0;
 }

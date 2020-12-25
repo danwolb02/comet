@@ -17,11 +17,13 @@ namespace comet
     using f32 = float;
     using f64 = double;
 
-    using String = std::u32string;
+    using String = std::string;
 
     template <typename Type>
-    using Vec = std::vector<Type>
+    using Vec = std::vector<Type>;
 
     template <typename Type>
     using Rc = std::shared_ptr<Type>;
+
+    using RuntimeError = std::runtime_error;
 } // namespace comet
