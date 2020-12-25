@@ -1,8 +1,8 @@
 #pragma once
 
+#include <comet/graphics/primitives/index_buffer.hpp>
+#include <comet/graphics/primitives/vertex_buffer.hpp>
 #include <comet/types.hpp>
-#include <comet/graphics/index_buffer.hpp>
-#include <comet/graphics/vertex_buffer.hpp>
 
 namespace comet
 {

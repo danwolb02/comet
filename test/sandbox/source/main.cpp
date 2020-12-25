@@ -1,8 +1,5 @@
 #include <comet/base.hpp>
 #include <comet/graphics/window.hpp>
-#include <comet/graphics/vertex_buffer.hpp>
-#include <comet/graphics/index_buffer.hpp>
-#include <comet/graphics/vertex_array.hpp>
 #include <comet/graphics/renderer.hpp>
 
 using namespace comet;
