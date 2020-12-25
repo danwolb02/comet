@@ -6,6 +6,7 @@
 namespace comet
 {
 IndexBuffer::IndexBuffer(const Vec<u32> &indices)
+: vertex_count(indices.size())
 {
     GL_CALL(glGenBuffers(1, &handle));
     if (!handle) throw RuntimeError("Unable to create vertex buffer.");
@@ -16,6 +17,7 @@ IndexBuffer::IndexBuffer(const Vec<u32> &indices)
 
 IndexBuffer::IndexBuffer(IndexBuffer &&other)
 : handle(other.handle)
+, vertex_count(other.vertex_count)
 {
     other.handle = 0;
 }
@@ -31,7 +33,9 @@ auto IndexBuffer::operator=(IndexBuffer &&other) -> IndexBuffer &
     {
         release();
         handle = other.handle;
+        vertex_count = other.vertex_count;
         other.handle = 0;
+        other.vertex_count = 0;
     }
 
     return *this;
@@ -45,6 +49,19 @@ auto IndexBuffer::release() -> void
 auto IndexBuffer::bind() const -> void
 {
     GL_CALL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, handle));
+}
+
+auto IndexBuffer::get_vertex_count() const -> u32
+{
+    return vertex_count;
+}
+
+auto operator<<(OutputStream &output_stream, const IndexBuffer &index_buffer) -> OutputStream &
+{
+    output_stream << "{ handle: " << index_buffer.handle
+                  << ", vertex_count: " << index_buffer.vertex_count
+                  << " }";
+    return output_stream;
 }
 
 }

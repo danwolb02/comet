@@ -23,8 +23,13 @@ public:
 
     auto bind() const -> void;
 
+    auto get_vertex_count() const -> u32;
+
+    friend auto operator<<(OutputStream &output_stream, const IndexBuffer &index_buffer) -> OutputStream &;
+
 private:
     u32 handle = 0;
+    u32 vertex_count;
 };
 
 }
