@@ -7,6 +7,7 @@ comet_source_files = files(
     'source/comet/graphics/primitives/vertex_array.cpp',
     'source/comet/graphics/renderer.cpp',
     'source/comet/graphics/primitives/shader.cpp',
+    'source/comet/mathematics/matrix.cpp',
 )
 
 comet_header_files = files(
@@ -19,6 +20,7 @@ comet_header_files = files(
     'include/comet/graphics/primitives/vertex_array.hpp',
     'include/comet/graphics/renderer.hpp',
     'include/comet/graphics/primitives/shader.hpp',
+    'include/comet/mathematics/matrix.hpp',
 )
 
 comet_dependencies = [
