@@ -1,0 +1,28 @@
+﻿---
+AlignAfterOpenBracket: Align
+AlignConsecutiveDeclarations: 'false'
+AlignEscapedNewlines: Right
+AlignOperands: 'true'
+AllowAllConstructorInitializersOnNextLine: 'true'
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Always
+AllowShortLambdasOnASingleLine: Empty
+AllowShortLoopsOnASingleLine: 'true'
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakTemplateDeclarations: 'Yes'
+BreakBeforeBraces: Linux
+BreakConstructorInitializers: BeforeComma
+ColumnLimit: '80'
+CompactNamespaces: 'true'
+ConstructorInitializerIndentWidth: '0'
+ContinuationIndentWidth: '0'
+IncludeBlocks: Regroup
+IndentWidth: '4'
+Language: Cpp
+NamespaceIndentation: None
+PointerAlignment: Right
+SpaceAfterCStyleCast: 'true'
+TabWidth: '4'
+UseTab: ForContinuationAndIndentation
+
+...
