@@ -8,35 +8,37 @@ namespace comet
 {
 class VertexArray
 {
-public:
-    explicit VertexArray(IndexBuffer &&index_buffer);
+  public:
+	explicit VertexArray(IndexBuffer &&index_buffer);
 
-    VertexArray(const VertexArray &other) = delete;
+	VertexArray(const VertexArray &other) = delete;
 
-    VertexArray(VertexArray &&other);
+	VertexArray(VertexArray &&other);
 
-    ~VertexArray();
+	~VertexArray();
 
-    auto operator=(const VertexArray &other) -> VertexArray & = delete;
+	auto operator=(const VertexArray &other) -> VertexArray & = delete;
 
-    auto operator=(VertexArray &&other) -> VertexArray &;
+	auto operator=(VertexArray &&other) -> VertexArray &;
 
-    auto release() -> void;
+	auto release() -> void;
 
-    auto bind() const -> void;
+	auto bind() const -> void;
 
-    auto upload(VertexBuffer &&vertex_buffer, u32 index, u32 size, u32 stride) -> void;
+	auto upload(VertexBuffer &&vertex_buffer, u32 index, u32 size, u32 stride)
+	-> void;
 
-    auto get_vertex_count() const -> u32;
+	auto get_vertex_count() const -> u32;
 
-    auto draw() const -> void;
+	auto draw() const -> void;
 
-    friend auto operator<<(OutputStream &output_stream, const VertexArray &vertex_array) -> OutputStream &;
+	friend auto operator<<(OutputStream &output_stream,
+						   const VertexArray &vertex_array) -> OutputStream &;
 
-private:
-    u32 handle = 0;
-    Map<u32, VertexBuffer> vertex_buffers;
-    IndexBuffer index_buffer;
+  private:
+	u32 handle = 0;
+	Map<u32, VertexBuffer> vertex_buffers;
+	IndexBuffer index_buffer;
 };
 
 } // namespace comet

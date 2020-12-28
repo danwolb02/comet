@@ -6,30 +6,31 @@ namespace comet
 {
 class IndexBuffer
 {
-public:
-    explicit IndexBuffer(const Vec<u32> &indices);
+  public:
+	explicit IndexBuffer(const Vec<u32> &indices);
 
-    IndexBuffer(const IndexBuffer &other) = delete;
+	IndexBuffer(const IndexBuffer &other) = delete;
 
-    IndexBuffer(IndexBuffer &&other);
+	IndexBuffer(IndexBuffer &&other);
 
-    ~IndexBuffer();
+	~IndexBuffer();
 
-    auto operator=(const IndexBuffer &other) -> IndexBuffer & = delete;
+	auto operator=(const IndexBuffer &other) -> IndexBuffer & = delete;
 
-    auto operator=(IndexBuffer &&other) -> IndexBuffer &;
+	auto operator=(IndexBuffer &&other) -> IndexBuffer &;
 
-    auto release() -> void;
+	auto release() -> void;
 
-    auto bind() const -> void;
+	auto bind() const -> void;
 
-    auto get_vertex_count() const -> u32;
+	auto get_vertex_count() const -> u32;
 
-    friend auto operator<<(OutputStream &output_stream, const IndexBuffer &index_buffer) -> OutputStream &;
+	friend auto operator<<(OutputStream &output_stream,
+						   const IndexBuffer &index_buffer) -> OutputStream &;
 
-private:
-    u32 handle = 0;
-    u32 vertex_count;
+  private:
+	u32 handle = 0;
+	u32 vertex_count;
 };
 
-}
+} // namespace comet

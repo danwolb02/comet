@@ -7,12 +7,12 @@ namespace comet
 {
 class Renderer
 {
-public:
-    Renderer();
+  public:
+	Renderer();
 
-    ~Renderer() = default;
+	~Renderer() = default;
 
-    auto render(const VertexArray &vertex_array, const Shader &shader) -> void;
+	auto render(const VertexArray &vertex_array, const Shader &shader) -> void;
 };
 
-}
+} // namespace comet
