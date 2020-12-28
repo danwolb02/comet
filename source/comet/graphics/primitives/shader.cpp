@@ -78,4 +78,13 @@ auto Shader::compile_shader(const u32 type, const String &source) const -> u32
 	return handle;
 }
 
+auto Shader::upload(const Matrix4f &matrix, const String &unifrom_name) const
+-> void
+{
+	use();
+	auto uniform_location = glGetUniformLocation(handle, unifrom_name.c_str());
+	GL_CALL(
+	glUniformMatrix4fv(uniform_location, 1, GL_FALSE, matrix.get_data()));
+}
+
 }; // namespace comet

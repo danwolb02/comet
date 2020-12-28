@@ -31,15 +31,31 @@ Window::~Window()
 	glfwTerminate();
 }
 
-auto Window::update() -> void
+auto Window::update() const -> void
 {
 	glfwPollEvents();
 	glfwSwapBuffers((GLFWwindow *) handle);
 }
 
-auto Window::should_close() -> bool
+auto Window::should_close() const -> bool
 {
 	return glfwWindowShouldClose((GLFWwindow *) handle);
+}
+
+auto Window::get_width() const -> u32
+{
+	i32 ret = 0;
+	glfwGetWindowSize((GLFWwindow *) handle, &ret, nullptr);
+	if (ret < 0) throw RuntimeError("Unable to get window width");
+	return (u32) ret;
+}
+
+auto Window::get_height() const -> u32
+{
+	i32 ret = 0;
+	glfwGetWindowSize((GLFWwindow *) handle, nullptr, &ret);
+	if (ret < 0) throw RuntimeError("Unable to get window width");
+	return (u32) ret;
 }
 
 } // namespace comet

@@ -39,4 +39,9 @@ class Matrix4f
 					  {0.0f, 0.0f, 0.0f, 0.0f}};
 };
 
+auto perspective(const f32 aspect, const f32 angle, const f32 near,
+				 const f32 far) -> Matrix4f;
+auto orthographic(const f32 left, const f32 right, const f32 bottom,
+				  const f32 top, const f32 near, const f32 far) -> Matrix4f;
+
 } // namespace comet
