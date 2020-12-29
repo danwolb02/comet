@@ -1,28 +1,138 @@
-﻿---
+AccessModifierOffset: -2
 AlignAfterOpenBracket: Align
-AlignConsecutiveDeclarations: 'false'
-AlignEscapedNewlines: Right
-AlignOperands: 'true'
-AllowAllConstructorInitializersOnNextLine: 'true'
+AlignConsecutiveAssignments: false
+AlignConsecutiveBitFields: false
+AlignConsecutiveDeclarations: false
+AlignConsecutiveMacros: false
+AlignEscapedNewlines: Left
+AlignOperands: Align
+AlignTrailingComments: false
+AllowAllArgumentsOnNextLine: false
+AllowAllConstructorInitializersOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: Always
-AllowShortLambdasOnASingleLine: Empty
-AllowShortLoopsOnASingleLine: 'true'
-AlwaysBreakAfterDefinitionReturnType: None
-AlwaysBreakTemplateDeclarations: 'Yes'
-BreakBeforeBraces: Linux
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: true
+# AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: Yes
+# AttributeMacros:
+BinPackArguments: true
+BinPackParameters: true
+# BitFieldColonSpacing: Both
+BraceWrapping:
+  AfterCaseLabel: true
+  AfterClass: true
+  AfterControlStatement: Always
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  # AfterObjCDeclaration: false
+  AfterStruct: true
+  AfterUnion: true
+  AfterExternBlock: true
+  BeforeCatch: true
+  BeforeElse: true
+  BeforeLambdaBody: true
+  BeforeWhile: true
+  IndentBraces: false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+BreakAfterJavaFieldAnnotations: true
+BreakBeforeBinaryOperators: None
+BreakBeforeBraces: Custom
+# BreakBeforeConceptDeclarations: true
+BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeComma
-ColumnLimit: '80'
-CompactNamespaces: 'true'
-ConstructorInitializerIndentWidth: '0'
-ContinuationIndentWidth: '0'
-IncludeBlocks: Regroup
-IndentWidth: '4'
+BreakInheritanceList: BeforeComma
+BreakStringLiterals: true
+ColumnLimit: 80
+# CommentPragmas:
+CompactNamespaces: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+ConstructorInitializerIndentWidth: 0
+ContinuationIndentWidth: 2
+Cpp11BracedListStyle: true
+DeriveLineEnding: false
+DerivePointerAlignment: false
+DisableFormat: false
+ExperimentalAutoDetectBinPacking: false
+FixNamespaceComments: true
+# ForEachMacros:
+IncludeBlocks: Preserve
+# IncludeCategories:
+# IncludeIsMainRegex:
+# IncludeIsMainSourceRegex:
+IndentCaseBlocks: false
+IndentCaseLabels: false
+IndentExternBlock: NoIndent
+IndentGotoLabels: true
+IndentPPDirectives: BeforeHash
+# IndentPragmas: false
+# IndentRequires: false
+IndentWidth: 2
+IndentWrappedFunctionNames: false
+InsertTrailingCommas: None
+# JavaImportGroups:
+JavaScriptQuotes: Double
+JavaScriptWrapImports: true
 Language: Cpp
+# MacroBlockBegin:
+# MacroBlockEnd
+MaxEmptyLinesToKeep: 1
 NamespaceIndentation: None
-PointerAlignment: Right
-SpaceAfterCStyleCast: 'true'
-TabWidth: '4'
-UseTab: ForContinuationAndIndentation
-
-...
+# NamespaceMacros:
+ObjCBinPackProtocolList: Always
+ObjCBlockIndentWidth: 2
+ObjCBreakBeforeNestedBlockParam: false
+# ObjCSpaceAfterProperty:
+# ObjCSpaceBeforeProtocolList:
+# PenaltyBreakAssignment:
+# PenaltyBreakBeforeFirstCallParameter:
+# PenaltyBreakComment
+# PenaltyBreakFirstLessLess
+# PenaltyBreakString
+# PenaltyBreakTemplateDeclaration
+# PenaltyExcessCharacter
+# PenaltyIndentedWhitespace
+# PenaltyReturnTypeOnItsOwnLine
+PointerAlignment: Left
+# RawStringFormats
+ReflowComments: true
+SortIncludes: true
+# SortJavaStaticImport: Before
+SortUsingDeclarations: true
+SpaceAfterCStyleCast: true
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: false
+# SpaceAroundPointerQualifiers: After
+SpaceBeforeAssignmentOperators: true
+# SpaceBeforeCaseColon: false
+SpaceBeforeCpp11BracedList: true
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: Never
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceBeforeSquareBrackets: false
+SpaceInEmptyBlock: false
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+SpacesInAngles: false
+SpacesInCStyleCastParentheses: false
+SpacesInConditionalStatement: false
+SpacesInContainerLiterals: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+Standard: Latest
+# StatementMacros
+TabWidth: 2
+# TypenameMacros
+UseCRLF: false
+UseTab: Never
+# WhitespaceSensitiveMacros:

@@ -2,6 +2,6 @@
 
 int main()
 {
-    comet::hello();
-    return 0;
+  comet::hello();
+  return 0;
 }
