@@ -46,5 +46,4 @@ auto operator<<(OutputStream &output_stream, const Map<Type1, Type2> &map)
 	output_stream << "}";
 	return output_stream;
 }
-
 } // namespace comet
