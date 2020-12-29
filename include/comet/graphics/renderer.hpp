@@ -9,18 +9,16 @@ namespace comet
 {
 class Renderer
 {
-  public:
-	explicit Renderer(const Window &window);
+public:
+  explicit Renderer(const Window& window);
 
-	~Renderer() = default;
+  ~Renderer() = default;
 
-	auto render(const VertexArray &vertex_array, const Shader &shader,
-				const Matrix4f &transformation_matrix,
-				const Matrix4f &view_matrix, const Matrix4f &projection_matrix)
-	-> void;
+  void render(const VertexArray& vertex_array, const Shader& shader,
+              const Matrix4f& transformation_matrix,
+              const Matrix4f& view_matrix, const Matrix4f& projection_matrix);
 
-  private:
-	const Window &window;
+private:
+  const Window& window;
 };
-
 } // namespace comet

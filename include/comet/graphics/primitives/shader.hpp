@@ -7,30 +7,28 @@ namespace comet
 {
 class Shader
 {
-  public:
-	Shader(const String &vertex_source, const String &fragment_source);
+public:
+  Shader(const String& vertex_source, const String& fragment_source);
 
-	Shader(const Shader &other) = delete;
+  Shader(const Shader& other) = delete;
 
-	Shader(Shader &&other);
+  Shader(Shader&& other);
 
-	~Shader();
+  ~Shader();
 
-	auto operator=(const Shader &other) -> Shader & = delete;
+  Shader& operator=(const Shader& other) = delete;
 
-	auto operator=(Shader &&other) -> Shader &;
+  Shader& operator=(Shader&& other);
 
-	auto release() -> void;
+  void release();
 
-	auto use() const -> void;
+  void use() const;
 
-	auto upload(const Matrix4f &matrix, const String &unifrom_name) const
-	-> void;
+  void upload(const Matrix4f& matrix, const String& unifrom_name) const;
 
-  private:
-	auto compile_shader(const u32 type, const String &source) const -> u32;
+private:
+  u32 compile_shader(const u32 type, const String& source) const;
 
-	u32 handle;
+  u32 handle;
 };
-
 } // namespace comet

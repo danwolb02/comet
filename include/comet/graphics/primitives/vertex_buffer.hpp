@@ -6,28 +6,27 @@ namespace comet
 {
 class VertexBuffer
 {
-  public:
-	explicit VertexBuffer(const Vec<f32> &data);
+public:
+  explicit VertexBuffer(const Vec<f32>& data);
 
-	VertexBuffer(const VertexBuffer &other) = delete;
+  VertexBuffer(const VertexBuffer& other) = delete;
 
-	VertexBuffer(VertexBuffer &&other);
+  VertexBuffer(VertexBuffer&& other);
 
-	~VertexBuffer();
+  ~VertexBuffer();
 
-	auto operator=(const VertexBuffer &other) -> VertexBuffer & = delete;
+  VertexBuffer& operator=(const VertexBuffer& other) = delete;
 
-	auto operator=(VertexBuffer &&other) -> VertexBuffer &;
+  VertexBuffer& operator=(VertexBuffer&& other);
 
-	auto release() -> void;
+  void release();
 
-	auto bind() const -> void;
+  void bind() const;
 
-	friend auto operator<<(OutputStream &output_stream,
-						   const VertexBuffer &vertex_buffer) -> OutputStream &;
+  friend OutputStream& operator<<(OutputStream& output_stream,
+                                  const VertexBuffer& vertex_buffer);
 
-  private:
-	u32 handle = 0;
+private:
+  u32 handle = 0;
 };
-
 } // namespace comet

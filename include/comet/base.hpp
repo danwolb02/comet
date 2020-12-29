@@ -4,10 +4,9 @@
 
 namespace comet
 {
-template <typename Type>
-constexpr typename std::remove_reference<Type>::type &&move(Type &object)
+template<typename Type>
+constexpr typename std::remove_reference<Type>::type&& move(Type& object)
 {
-	return std::move(object);
+  return std::move(object);
 }
-
 } // namespace comet

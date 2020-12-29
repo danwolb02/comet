@@ -8,37 +8,35 @@ namespace comet
 {
 class VertexArray
 {
-  public:
-	explicit VertexArray(IndexBuffer &&index_buffer);
+public:
+  explicit VertexArray(IndexBuffer&& index_buffer);
 
-	VertexArray(const VertexArray &other) = delete;
+  VertexArray(const VertexArray& other) = delete;
 
-	VertexArray(VertexArray &&other);
+  VertexArray(VertexArray&& other);
 
-	~VertexArray();
+  ~VertexArray();
 
-	auto operator=(const VertexArray &other) -> VertexArray & = delete;
+  VertexArray& operator=(const VertexArray& other) = delete;
 
-	auto operator=(VertexArray &&other) -> VertexArray &;
+  VertexArray& operator=(VertexArray&& other);
 
-	auto release() -> void;
+  void release();
 
-	auto bind() const -> void;
+  void bind() const;
 
-	auto upload(VertexBuffer &&vertex_buffer, u32 index, u32 size, u32 stride)
-	-> void;
+  void upload(VertexBuffer&& vertex_buffer, u32 index, u32 size, u32 stride);
 
-	auto get_vertex_count() const -> u32;
+  u32 get_vertex_count() const;
 
-	auto draw() const -> void;
+  void draw() const;
 
-	friend auto operator<<(OutputStream &output_stream,
-						   const VertexArray &vertex_array) -> OutputStream &;
+  friend OutputStream& operator<<(OutputStream& output_stream,
+                                  const VertexArray& vertex_array);
 
-  private:
-	u32 handle = 0;
-	Map<u32, VertexBuffer> vertex_buffers;
-	IndexBuffer index_buffer;
+private:
+  u32 handle = 0;
+  Map<u32, VertexBuffer> vertex_buffers;
+  IndexBuffer index_buffer;
 };
-
 } // namespace comet

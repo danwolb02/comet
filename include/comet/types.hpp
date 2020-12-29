@@ -19,31 +19,32 @@ using f64 = double;
 
 using String = std::string;
 
-template <typename Type>
+template<typename Type>
 using Vec = std::vector<Type>;
 
-template <typename Type>
+template<typename Type>
 using Rc = std::shared_ptr<Type>;
 
 using RuntimeError = std::runtime_error;
 
-template <typename Type1, typename Type2>
+template<typename Type1, typename Type2>
 using Map = std::map<Type1, Type2>;
 
 using OutputStream = std::ostream;
 
-template <typename Type1, typename Type2>
-auto operator<<(OutputStream &output_stream, const Map<Type1, Type2> &map)
--> OutputStream &
+template<typename Type1, typename Type2>
+OutputStream& operator<<(OutputStream& output_stream,
+                         const Map<Type1, Type2>& map)
 {
-	output_stream << "{ ";
+  output_stream << "{ ";
 
-	for (auto it = map.begin(); it != map.end(); it++) {
-		output_stream << "{ index: " << it->first
-					  << ", vertex_array: " << it->second << " } ";
-	}
+  for(auto it = map.begin(); it != map.end(); it++)
+  {
+    output_stream << "{ index: " << it->first
+                  << ", vertex_array: " << it->second << " } ";
+  }
 
-	output_stream << "}";
-	return output_stream;
+  output_stream << "}";
+  return output_stream;
 }
 } // namespace comet

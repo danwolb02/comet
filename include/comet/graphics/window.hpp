@@ -6,21 +6,20 @@ namespace comet
 {
 class Window
 {
-  public:
-	Window(const u32 width, const u32 height, const String &title);
+public:
+  Window(const u32 width, const u32 height, const String& title);
 
-	~Window();
+  ~Window();
 
-	auto update() const -> void;
+  void update() const;
 
-	auto should_close() const -> bool;
+  bool should_close() const;
 
-	auto get_width() const -> u32;
+  u32 get_width() const;
 
-	auto get_height() const -> u32;
+  u32 get_height() const;
 
-  private:
-	void *handle = nullptr;
+private:
+  void* handle = nullptr;
 };
-
 } // namespace comet

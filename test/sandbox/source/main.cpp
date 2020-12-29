@@ -6,15 +6,15 @@ using namespace comet;
 
 int main()
 {
-	Window window(1280, 720, "Comet Application");
-	VertexBuffer vertex_buffer({-1, 1, 0, 1, 1, 0, 1, -1, 0, -1, -1, 0});
-	IndexBuffer index_buffer({0, 1, 2, 0, 3, 2});
-	VertexArray vertex_array(move(index_buffer));
-	vertex_array.upload(move(vertex_buffer), 0, 3, 0);
+  Window window(1280, 720, "Comet Application");
+  VertexBuffer vertex_buffer({-1, 1, 0, 1, 1, 0, 1, -1, 0, -1, -1, 0});
+  IndexBuffer index_buffer({0, 1, 2, 0, 3, 2});
+  VertexArray vertex_array(move(index_buffer));
+  vertex_array.upload(move(vertex_buffer), 0, 3, 0);
 
-	Renderer renderer(window);
+  Renderer renderer(window);
 
-	String vertex_source = R"(
+  String vertex_source = R"(
     #version 410 core
 
     layout (location = 0) in vec3 position_vertex;
@@ -29,7 +29,7 @@ int main()
     }
     )";
 
-	String fragment_source = R"(
+  String fragment_source = R"(
     #version 410 core
 
     out vec4 out_color;
@@ -40,25 +40,26 @@ int main()
     }
     )";
 
-	Shader shader(vertex_source, fragment_source);
+  Shader shader(vertex_source, fragment_source);
 
-	Matrix4f transformation_matrix(1);
+  Matrix4f transformation_matrix(1);
 
-	Matrix4f view_matrix(1);
-	view_matrix = view_matrix.translate(0, 0, -10);
+  Matrix4f view_matrix(1);
+  view_matrix = view_matrix.translate(0, 0, -10);
 
-	while (!window.should_close()) {
-		window.update();
+  while(!window.should_close())
+  {
+    window.update();
 
-		if (window.get_width() == 0 || window.get_height() == 0) continue;
+    if(window.get_width() == 0 || window.get_height() == 0) continue;
 
-		Matrix4f projection_matrix = perspective(
-		(f32) window.get_width() / (f32) window.get_height(), 1.0472, 0.1, 100);
-		transformation_matrix = transformation_matrix.rotate(0, 0.1, 0);
+    Matrix4f projection_matrix = perspective(
+      (f32) window.get_width() / (f32) window.get_height(), 1.0472, 0.1, 100);
+    transformation_matrix = transformation_matrix.rotate(0, 0.1, 0);
 
-		renderer.render(vertex_array, shader, transformation_matrix,
-						view_matrix, projection_matrix);
-	}
+    renderer.render(vertex_array, shader, transformation_matrix, view_matrix,
+                    projection_matrix);
+  }
 
-	return 0;
+  return 0;
 }
