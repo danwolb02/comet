@@ -61,7 +61,7 @@ u32 Shader::compile_shader(const u32 type, const String& source) const
   GL_CALL(glShaderSource(handle, 1, &source_pointer, nullptr));
   GL_CALL(glCompileShader(handle));
 
-  u32 is_compiled = 0;
+  i32 is_compiled = 0;
   GL_CALL(glGetShaderiv(handle, GL_COMPILE_STATUS, &is_compiled));
 
   if(is_compiled == false)

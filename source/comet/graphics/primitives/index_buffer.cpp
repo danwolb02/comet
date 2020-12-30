@@ -57,7 +57,7 @@ u32 IndexBuffer::get_vertex_count() const
   return vertex_count;
 }
 
-OutputStream operator<<(OutputStream& output_stream,
+OutputStream& operator<<(OutputStream& output_stream,
                         const IndexBuffer& index_buffer)
 {
   output_stream << "{ handle: " << index_buffer.handle
